@@ -16,7 +16,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         setContentView(R.layout.activity_main)
-        videoLayout = findViewById(R.id.videoLayout);
+        supportActionBar?.hide()
+        videoLayout = findViewById(R.id.videoLayout)
     }
 
     fun thanks(v: View) {
