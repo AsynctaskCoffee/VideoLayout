@@ -22,13 +22,13 @@ The normal videoview on Android is very costly in terms of performance. Also, du
 ```xml
         
     <egolabsapps.basicodemine.videolayout.VideoLayout
-            android:layout_width="match_parent"
             android:id="@+id/videoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
             app:video_gravity="centerCrop"
             app:path_or_url="loginvideotype3.mp4"
-            app:loop="true"
-            android:layout_gravity="center"
-            android:layout_height="match_parent"/>
+            app:loop="true"/>
 
 ```
 
