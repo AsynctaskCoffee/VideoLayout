@@ -30,6 +30,28 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
     private boolean isUrl;
     private boolean IS_LOOP;
 
+    public static enum VGravity {
+        start,
+        end,
+        centerCrop,
+        none;
+
+        public int getValue() {
+            switch (this) {
+                case end:
+                    return 1;
+                case none:
+                    return 3;
+                case start:
+                    return 0;
+                case centerCrop:
+                    return 2;
+                default:
+                    return 2;
+            }
+        }
+    }
+
     public VideoLayout(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 
@@ -219,4 +241,17 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
     public TextureView getVideoSurface() {
         return videoSurface;
     }
+
+    public void setPathOrUrl(String FILE_NAME) {
+        this.FILE_NAME = FILE_NAME;
+    }
+
+    public void setIsLoop(boolean IS_LOOP) {
+        this.IS_LOOP = IS_LOOP;
+    }
+
+    public void setGravity(VGravity gravity) {
+        VIDEO_GRAVITY = gravity.getValue();
+    }
+
 }
