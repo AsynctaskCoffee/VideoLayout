@@ -28,6 +28,7 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
     private String TAG = "VideoLayout";
     private MediaPlayer mMediaPlayer;
     private boolean isUrl;
+    private boolean IS_LOOP;
 
     public VideoLayout(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -36,6 +37,7 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
         try {
             FILE_NAME = a.getString(R.styleable.VideoLayout_path_or_url);
             VIDEO_GRAVITY = a.getInteger(R.styleable.VideoLayout_video_gravity, 2);
+            IS_LOOP = a.getBoolean(R.styleable.VideoLayout_loop, true);
         } finally {
             a.recycle();
         }
@@ -138,7 +140,7 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
             }
             mMediaPlayer.setVolume(0f, 0f);
             mMediaPlayer.setSurface(surface);
-            mMediaPlayer.setLooping(true);
+            mMediaPlayer.setLooping(IS_LOOP);
             mMediaPlayer.prepareAsync();
             mMediaPlayer.setOnPreparedListener(MediaPlayer::start);
 
