@@ -52,6 +52,10 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
         }
     }
 
+    public VideoLayout(@NonNull Context context) {
+        super(context);
+    }
+
     public VideoLayout(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 
@@ -166,21 +170,45 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
             mMediaPlayer.prepareAsync();
             mMediaPlayer.setOnPreparedListener(MediaPlayer::start);
 
-        } catch (IllegalArgumentException e) {
-            Log.d(TAG, e.getMessage());
-//            e.printStackTrace();
-        } catch (SecurityException e) {
-            Log.d(TAG, e.getMessage());
-//            e.printStackTrace();
-        } catch (IllegalStateException e) {
-            Log.d(TAG, e.getMessage());
-//            e.printStackTrace();
-        } catch (IOException e) {
-            Log.d(TAG, e.getMessage());
-//            e.printStackTrace();
+        } catch (IllegalArgumentException ignored) {
+
+        } catch (SecurityException ignored) {
+
+        } catch (IllegalStateException ignored) {
+
+        } catch (IOException ignored) {
+
         }
     }
 
+    //todo video değiştirme kısmının kontrol ve testlerini yap
+
+    private void changeVideo() {
+        try {
+            onDestroyVideoLayout();
+            mMediaPlayer = new MediaPlayer();
+            if (isUrl)
+                mMediaPlayer.setDataSource(FILE_NAME);
+            else {
+                AssetFileDescriptor afd = getContext().getAssets().openFd(FILE_NAME);
+                mMediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
+            }
+            mMediaPlayer.setVolume(0f, 0f);
+            mMediaPlayer.setLooping(IS_LOOP);
+            mMediaPlayer.setSurface(new Surface(videoSurface.getSurfaceTexture()));
+            mMediaPlayer.prepareAsync();
+            mMediaPlayer.setOnPreparedListener(MediaPlayer::start);
+
+        } catch (IllegalArgumentException ignored) {
+
+        } catch (SecurityException ignored) {
+
+        } catch (IllegalStateException ignored) {
+
+        } catch (IOException ignored) {
+
+        }
+    }
 
     @Override
     public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
@@ -220,8 +248,8 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
         if (mMediaPlayer != null && !mMediaPlayer.isPlaying())
             try {
                 mMediaPlayer.start();
-            } catch (IllegalStateException e) {
-                Log.d(TAG, e.getMessage());
+            } catch (IllegalStateException ignored) {
+
             }
     }
 
@@ -229,8 +257,8 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
         if (mMediaPlayer != null && mMediaPlayer.isPlaying())
             try {
                 mMediaPlayer.pause();
-            } catch (IllegalStateException e) {
-                Log.d(TAG, e.getMessage());
+            } catch (IllegalStateException ignored) {
+
             }
     }
 
@@ -244,6 +272,23 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
 
     public void setPathOrUrl(String FILE_NAME) {
         this.FILE_NAME = FILE_NAME;
+
+        isUrl = FILE_NAME.contains("http://") || FILE_NAME.contains("https://");
+
+        if (videoSurface == null) {
+            initViews();
+            addView(videoSurface);
+            setListeners();
+        }
+
+        if (VIDEO_GRAVITY != 3) {
+            calculateVideoSize();
+            surfaceSetup();
+        }
+
+        if (videoSurface != null) {
+            changeVideo();
+        }
     }
 
     public void setIsLoop(boolean IS_LOOP) {
