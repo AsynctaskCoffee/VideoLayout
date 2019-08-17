@@ -32,7 +32,7 @@ The normal videoview on Android is very costly in terms of performance. Also, du
 
 ```
 
-![](previews/videolayout1.gif=300x550) ![](previews/videolayout2.gif=300x550)
+![](previews/videolayout1.gif =300x550) ![](previews/videolayout2.gif =300x550)
 
 
 ### Sticky and Free Mode
