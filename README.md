@@ -1,6 +1,7 @@
 # VideoLayout
 > More stylish background designs
-> Performance friendly and scaleable
+
+> Performance friendly and scalable
 
 ### Why this project exist ?
 The normal videoview on Android is very costly in terms of performance. Also, due to the video resolution ratio and apk size, most developers don't want to include videos in the project. With this library, developers will have a performance-friendly video background with a few lines of code.
@@ -9,16 +10,15 @@ The normal videoview on Android is very costly in terms of performance. Also, du
 
 ### Easy implementation 
 
-`view` can be any Button, Imageview or ImageButton which activate the FlyingVideo. `videoId` should have an ID of your YouTube video. For simply:
-
 ```java
-  FlyingVideo.get(MainActivity.this)
-                .setFloatMode(TaskCoffeeVideo.FLOAT_MOVE.STICKY)
-                .setVideoStartSecond((mTracker == null) ? 0 : mTracker.getCurrentSecond())
-                .coffeeVideoSetup(videoId)
-                .show(view);
+        frameLayout = findViewById(R.id.frameLayout)
+        videoLayout = VideoLayout(this)
+        videoLayout.setGravity(VideoLayout.VGravity.centerCrop)
+        videoLayout.setIsLoop(true)
+        videoLayout.setPathOrUrl("loginvideotype3.mp4") // could be any video url
+        frameLayout.addView(videoLayout)
 ```
-![](previews/untitledx1.gif) ![](previews/untitledx22.gif)
+![](previews/videolayout1.gif) ![](previews/videolayout2.gif)
 
 
 ### Sticky and Free Mode
