@@ -18,7 +18,21 @@ The normal videoview on Android is very costly in terms of performance. Also, du
         videoLayout.setPathOrUrl("loginvideotype3.mp4") // could be any video url
         frameLayout.addView(videoLayout)
 ```
-![](previews/videolayout1.gif) ![](previews/videolayout2.gif)
+
+```xml
+        
+    <egolabsapps.basicodemine.videolayout.VideoLayout
+            android:layout_width="match_parent"
+            android:id="@+id/videoLayout"
+            app:video_gravity="centerCrop"
+            app:path_or_url="loginvideotype3.mp4"
+            app:loop="true"
+            android:layout_gravity="center"
+            android:layout_height="match_parent"/>
+
+```
+
+![](previews/videolayout1.gif=300x550) ![](previews/videolayout2.gif=300x550)
 
 
 ### Sticky and Free Mode
