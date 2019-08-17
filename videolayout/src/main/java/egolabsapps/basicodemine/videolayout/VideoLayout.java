@@ -26,13 +26,11 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
     float mVideoWidth;
     float mVideoHeight;
     private String TAG = "VideoLayout";
-    private Context context;
     private MediaPlayer mMediaPlayer;
     private boolean isUrl;
 
     public VideoLayout(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        this.context = context;
 
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.VideoLayout, 0, 0);
         try {
@@ -64,7 +62,7 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
 
 
     private void initViews() {
-        videoSurface = new TextureView(context);
+        videoSurface = new TextureView(getContext());
     }
 
     private void setListeners() {
@@ -77,7 +75,7 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
             if (isUrl)
                 metaRetriever.setDataSource(FILE_NAME, new HashMap<>());
             else {
-                AssetFileDescriptor afd = context.getAssets().openFd(FILE_NAME);
+                AssetFileDescriptor afd = getContext().getAssets().openFd(FILE_NAME);
                 metaRetriever.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
             }
             String height = metaRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_HEIGHT);
@@ -135,7 +133,7 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
             if (isUrl)
                 mMediaPlayer.setDataSource(FILE_NAME);
             else {
-                AssetFileDescriptor afd = context.getAssets().openFd(FILE_NAME);
+                AssetFileDescriptor afd = getContext().getAssets().openFd(FILE_NAME);
                 mMediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
             }
             mMediaPlayer.setVolume(0f, 0f);
@@ -210,5 +208,13 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
             } catch (IllegalStateException e) {
                 Log.d(TAG, e.getMessage());
             }
+    }
+
+    public MediaPlayer getMediaPlayer() {
+        return mMediaPlayer;
+    }
+
+    public TextureView getVideoSurface() {
+        return videoSurface;
     }
 }
