@@ -32,7 +32,7 @@ The normal videoview on Android is very costly in terms of performance. Also, du
 
 ```
 
-###### You should put you mp4 files into assets folder, If you use URL you should declare;
+###### You should put your mp4 files into assets folder, If you use URL you should declare;
 
 ```xml
    <uses-permission android:name="android.permission.INTERNET"/>
