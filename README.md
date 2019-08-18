@@ -40,7 +40,7 @@ The normal videoview on Android is very costly in terms of performance. Also, du
 
 ```groovy
     repositories {
-			maven { url 'https://jitpack.io' }
+        maven { url 'https://jitpack.io' }
     }
 ```
 
