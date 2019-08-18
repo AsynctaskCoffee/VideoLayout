@@ -32,69 +32,8 @@ The normal videoview on Android is very costly in terms of performance. Also, du
 
 ```
 
-![](previews/videolayout1.gif) ![](previews/videolayout2.gif)
-
-<img src="previews/videolayout1.gif" width="480">
-
-### Sticky and Free Mode
-
-#### Sticky FLOAT_MOVE
-
-FlyingVideo automatically snaps up or down according to the position of the screen where you left the panel.
-
-```java
-  FlyingVideo.get(MainActivity.this)
-                .setFloatMode(TaskCoffeeVideo.FLOAT_MOVE.STICKY)
-                .setVideoStartSecond((mTracker == null) ? 0 : mTracker.getCurrentSecond())
-                .coffeeVideoSetup(videoId)
-                .show(view);
-```
-
-
-#### Free FLOAT_MOVE
-
-FlyingVideo never sticks on constant position, it stays on the position where you left.
-
-```java
-    FlyingVideo.get(MainActivity.this)
-                .setFloatMode(TaskCoffeeVideo.FLOAT_MOVE.FREE)
-                .setVideoStartSecond((mTracker == null) ? 0 : mTracker.getCurrentSecond())
-                .coffeeVideoSetup(videoId)
-                .show(view);
-```
-
-![Sticky](previews/untitledsticky.gif) ![Free](previews/untitlednosticky.gif)
-
-### Initial FlyGravity Mode
-
-#### BOTTOM FlyGravity
-
-
-FlyVideo appears bottom of the screen when opened.
-
-```java
-    FlyingVideo.get(MainActivity.this)
-                .setFloatMode(TaskCoffeeVideo.FLOAT_MOVE.FREE)
-                .setVideoStartSecond((mTracker == null) ? 0 : mTracker.getCurrentSecond())
-                .coffeeVideoSetup(videoId)
-                .setFlyGravity(TaskCoffeeVideo.FLY_GRAVITY.BOTTOM)
-                .show(view);
-```
-
-#### TOP FlyGravity
-
-FlyVideo appears top of the screen when opened.
-
-```java
-    FlyingVideo.get(MainActivity.this)
-                .setFloatMode(TaskCoffeeVideo.FLOAT_MOVE.FREE)
-                .setVideoStartSecond((mTracker == null) ? 0 : mTracker.getCurrentSecond())
-                .coffeeVideoSetup(videoId)
-                .setFlyGravity(TaskCoffeeVideo.FLY_GRAVITY.TOP)
-                .show(view);
-```
-
-![BOTTOM](previews/untitledbottom.gif) ![TOP](previews/untitledtop.gif)
+<img src="previews/videolayout1.gif" width="350">
+<img src="previews/videolayout2.gif" width="350">
 
 ## Implementation
 
@@ -116,20 +55,6 @@ dependencies {
 	        implementation 'com.github.AsynctaskCoffee:YoutubeFloatingVideo:0.0.3'
 	}
 ```
-
-### Used Libraries
-
-* **Henning Dodenhof** - *Circular ImageView* - [hdodenhof](https://github.com/hdodenhof/CircleImageView)
-* **Pierfrancesco Soffritti** - *android-youtube-player* - [PierfrancescoSoffritti](https://github.com/PierfrancescoSoffritti/android-youtube-player)
-
-#### NOTE:
-
-This library is designed not to violate the rules. However, all problems that may occur are under your responsibility.
-
-Before publishing your app to GooglePlay please make sure that you have read Youtube and Google Terms;
-* [Terms](https://developers.google.com/youtube/terms/developer-policies)
-
-
 
 ## License
 
