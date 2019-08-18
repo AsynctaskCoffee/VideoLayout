@@ -32,8 +32,7 @@ The normal videoview on Android is very costly in terms of performance. Also, du
 
 ```
 
-<img src="previews/videolayout1.gif" width="350">
-<img src="previews/videolayout2.gif" width="350">
+<img src="previews/videolayout1.gif" width="350"> <img src="previews/videolayout2.gif" width="350">
 
 ## Implementation
 
