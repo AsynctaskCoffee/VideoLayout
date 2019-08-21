@@ -1,9 +1,8 @@
 # VideoLayout
 > More stylish background designs
-
 > Performance friendly and scalable
 
-### Why this project exist ?
+## Why this project exists
 The normal videoview on Android is very costly in terms of performance. Also, due to the video resolution ratio and apk size, most developers don't want to include videos in the project. With this library, developers will have a performance-friendly video background with a few lines of code.
 
 ## Features and Usage
@@ -19,8 +18,7 @@ The normal videoview on Android is very costly in terms of performance. Also, du
         frameLayout.addView(videoLayout)
 ```
 
-```xml
-        
+```xml    
     <egolabsapps.basicodemine.videolayout.VideoLayout
             android:id="@+id/videoLayout"
             android:layout_width="match_parent"
@@ -29,7 +27,6 @@ The normal videoview on Android is very costly in terms of performance. Also, du
             app:video_gravity="centerCrop"
             app:path_or_url="loginvideotype3.mp4"
             app:loop="true"/>
-
 ```
 
 ###### You should put your mp4 files into assets folder, If you use URL you should declare;
@@ -38,12 +35,11 @@ The normal videoview on Android is very costly in terms of performance. Also, du
    <uses-permission android:name="android.permission.INTERNET"/>
 ```
 
-
 <img src="previews/videolayout1.gif" width="350"> <img src="previews/videolayout2.gif" width="350">
 
 ## Implementation
 
-###### Add it in your root build.gradle at the end of repositories:
+###### Add it in your root build.gradle at the end of repositories
 
 ```groovy
     repositories {
