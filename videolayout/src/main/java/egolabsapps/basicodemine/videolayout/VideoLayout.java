@@ -23,8 +23,8 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
     private String FILE_NAME;
     private int VIDEO_GRAVITY;
     private TextureView videoSurface;
-    float mVideoWidth;
-    float mVideoHeight;
+    private float mVideoWidth;
+    private float mVideoHeight;
     private String TAG = "VideoLayout";
     private MediaPlayer mMediaPlayer;
     private boolean isUrl;
@@ -153,7 +153,7 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
         updateTextureViewSize(screenWidth, screenHeight);
     }
 
-    private void surfaceAvaibleWorkers(SurfaceTexture surfaceTexture, int width, int height) {
+    private void surfaceAvaibleWorkers(SurfaceTexture surfaceTexture) {
         Surface surface = new Surface(surfaceTexture);
 
         try {
@@ -212,12 +212,11 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
 
     @Override
     public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
-        surfaceAvaibleWorkers(surface, width, height);
+        surfaceAvaibleWorkers(surface);
     }
 
     @Override
     public void onSurfaceTextureSizeChanged(SurfaceTexture surface, int width, int height) {
-
     }
 
     @Override
@@ -227,7 +226,6 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
 
     @Override
     public void onSurfaceTextureUpdated(SurfaceTexture surface) {
-
     }
 
 
