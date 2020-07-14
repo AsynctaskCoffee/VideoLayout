@@ -53,8 +53,13 @@ The normal videoview on Android is very costly in terms of performance. Also, du
 ###### Add the dependency
 
 ```groovy
-    implementation 'com.github.AsynctaskCoffee:VideoLayout:1.0'
+    implementation 'com.github.AsynctaskCoffee:VideoLayout:1.1'
 ```
+
+### Updates
+
+> 14.07.2020 - AndroidX migration und code refactor
+
 
 ## License
 
