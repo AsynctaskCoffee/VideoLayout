@@ -38,7 +38,7 @@ The normal videoview on Android is very costly in terms of performance. Also, du
    <uses-permission android:name="android.permission.INTERNET"/>
 ```
 
-<img src="previews/videolayout1.gif" width="350"> <img src="previews/videolayout2.gif" width="350">
+<img src="previews/pp1.gif" width="350"> <img src="previews/pp2.gif" width="350">
 
 ## Implementation
 

@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
             videoLayout.setPathOrUrl("loginvideotype4.mp4")
 
-        }, 4000)
+        }, 14000)
     }
 
     fun thanks(v: View) {
