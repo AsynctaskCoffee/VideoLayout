@@ -7,10 +7,11 @@ import android.graphics.Matrix;
 import android.graphics.SurfaceTexture;
 import android.media.MediaMetadataRetriever;
 import android.media.MediaPlayer;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.Surface;
 import android.view.TextureView;
 import android.widget.FrameLayout;
@@ -45,7 +46,6 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
                 case start:
                     return 0;
                 case centerCrop:
-                    return 2;
                 default:
                     return 2;
             }
@@ -111,11 +111,7 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
             mVideoHeight = Float.parseFloat(height);
             mVideoWidth = Float.parseFloat(width);
             metaRetriever.release();
-        } catch (IOException e) {
-            Log.d(TAG, e.getMessage());
-            e.printStackTrace();
-        } catch (NumberFormatException e) {
-            Log.d(TAG, e.getMessage());
+        } catch (IOException | NumberFormatException e) {
             e.printStackTrace();
         }
     }
@@ -153,7 +149,7 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
         updateTextureViewSize(screenWidth, screenHeight);
     }
 
-    private void surfaceAvaibleWorkers(SurfaceTexture surfaceTexture) {
+    private void surfaceAvailableWorkers(SurfaceTexture surfaceTexture) {
         Surface surface = new Surface(surfaceTexture);
 
         try {
@@ -170,13 +166,7 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
             mMediaPlayer.prepareAsync();
             mMediaPlayer.setOnPreparedListener(MediaPlayer::start);
 
-        } catch (IllegalArgumentException ignored) {
-
-        } catch (SecurityException ignored) {
-
-        } catch (IllegalStateException ignored) {
-
-        } catch (IOException ignored) {
+        } catch (IllegalArgumentException | SecurityException | IllegalStateException | IOException ignored) {
 
         }
     }
@@ -199,20 +189,14 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
             mMediaPlayer.prepareAsync();
             mMediaPlayer.setOnPreparedListener(MediaPlayer::start);
 
-        } catch (IllegalArgumentException ignored) {
-
-        } catch (SecurityException ignored) {
-
-        } catch (IllegalStateException ignored) {
-
-        } catch (IOException ignored) {
+        } catch (IllegalArgumentException | IOException | IllegalStateException | SecurityException ignored) {
 
         }
     }
 
     @Override
     public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
-        surfaceAvaibleWorkers(surface);
+        surfaceAvailableWorkers(surface);
     }
 
     @Override
@@ -236,7 +220,6 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
                 mMediaPlayer.release();
                 mMediaPlayer = null;
             } catch (IllegalStateException e) {
-                Log.d(TAG, e.getMessage());
             }
 
         }
