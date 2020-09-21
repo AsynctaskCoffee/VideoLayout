@@ -56,6 +56,7 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
         super(context);
     }
 
+    //*you can also get mediaplayer and set it manually*/
     public void setSound(boolean sound) {
         this.SOUND = sound;
         if (mMediaPlayer != null)
