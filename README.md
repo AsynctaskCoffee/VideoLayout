@@ -30,7 +30,7 @@ The normal videoview on Android is very costly in terms of performance. Also, du
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            app:sound = "true"
+            app:sound="true"
             app:video_gravity="centerCrop"
             app:path_or_url="loginvideotype3.mp4"
             app:loop="true"/>
@@ -58,6 +58,23 @@ The normal videoview on Android is very costly in terms of performance. Also, du
 
 ```groovy
     implementation 'com.github.AsynctaskCoffee:VideoLayout:1.2'
+```
+
+```groovy
+<repositories>
+	<repository>
+	    <id>jitpack.io</id>
+	    <url>https://jitpack.io</url>
+	</repository>
+</repositories>
+```
+
+```groovy
+<dependency>
+    <groupId>com.github.AsynctaskCoffee</groupId>
+    <artifactId>VideoLayout</artifactId>
+    <version>1.2</version>
+</dependency>
 ```
 
 ### Updates
