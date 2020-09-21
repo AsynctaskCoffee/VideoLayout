@@ -43,9 +43,7 @@ The normal videoview on Android is very costly in terms of performance. Also, du
    <uses-permission android:name="android.permission.INTERNET"/>
 ```
 
-<img src="previews/pp1.gif" width="350"> <img src="previews/pp2.gif" width="350">
-
-## Implementation
+## Implementation Gradle
 
 ###### Add it in your root build.gradle at the end of repositories
 
@@ -58,24 +56,32 @@ The normal videoview on Android is very costly in terms of performance. Also, du
 ###### Add the dependency
 
 ```groovy
-    implementation 'com.github.AsynctaskCoffee:VideoLayout:1.2'
+    dependencies {
+	    implementation 'com.github.AsynctaskCoffee:VideoLayout:1.2'
+	}
 ```
 
-```groovy
-<repositories>
-	<repository>
-	    <id>jitpack.io</id>
-	    <url>https://jitpack.io</url>
-	</repository>
-</repositories>
-```
+## Implementation Maven
+
+###### Add the JitPack repository to your build file 
 
 ```groovy
-<dependency>
-    <groupId>com.github.AsynctaskCoffee</groupId>
-    <artifactId>VideoLayout</artifactId>
-    <version>1.2</version>
-</dependency>
+    <repositories>
+	    <repository>
+	        <id>jitpack.io</id>
+	        <url>https://jitpack.io</url>
+	    </repository>
+    </repositories>
+```
+
+###### Add the dependency
+
+```groovy
+    <dependency>
+        <groupId>com.github.AsynctaskCoffee</groupId>
+        <artifactId>VideoLayout</artifactId>
+        <version>1.2</version>
+    </dependency>
 ```
 
 ### Updates
