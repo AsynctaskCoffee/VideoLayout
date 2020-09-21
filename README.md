@@ -63,6 +63,7 @@ The normal videoview on Android is very costly in terms of performance. Also, du
 ### Updates
 
 > 14.07.2020 - AndroidX migration und code refactor
+
 > 21.09.2020 - Sound support and new preview design implementation added
 
 ## License
