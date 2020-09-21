@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<egolabsapps.basicodemine.videolayout.VideoLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:loop="true"
+        app:path_or_url="lp_chesterr.mp4"
+        app:sound="true"
+        app:video_gravity="centerCrop"
+        tools:context=".SpotiActivity">
+
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#99000000"
+            android:scaleType="centerCrop" />
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="22dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+            <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_path_2" />
+
+            <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+
+            <ImageView
+                    android:layout_width="107dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_path_31" />
+
+            <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+            <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_group_34" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="18dp"
+                    android:layout_marginEnd="25dp"
+                    android:src="@drawable/ic_group_35" />
+
+            <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                <ImageView
+                        android:layout_width="175dp"
+                        android:layout_height="175dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_ellipse_4" />
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/lp"
+                        app:civ_border_overlay="true" />
+
+
+            </FrameLayout>
+
+            <ImageView
+                    android:layout_width="21dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="25dp"
+                    android:src="@drawable/ic_group_47" />
+
+        </LinearLayout>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:text="One More Light"
+                android:textColor="@android:color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Linkin Park"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="13dp" />
+
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            <Chronometer
+                    android:id="@+id/chronometer"
+                    android:layout_width="wrap_content"
+                    android:text="00:00"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="13dp"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" / 04:07"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="13dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+            <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginEnd="27dp"
+                    android:src="@drawable/ic_group_45" />
+
+            <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="15dp"
+                    android:layout_marginEnd="37dp"
+                    android:src="@drawable/ic_path_9" />
+
+            <ImageView
+                    android:layout_width="41dp"
+                    android:layout_height="41dp"
+                    android:src="@drawable/ic_path_21" />
+
+            <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="15dp"
+                    android:layout_marginStart="37dp"
+                    android:src="@drawable/ic_path_8" />
+
+            <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="27dp"
+                    android:src="@drawable/ic_group_46" />
+
+        </LinearLayout>
+
+        <ImageView
+                android:layout_width="113dp"
+                android:layout_height="14dp"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/ic_path_35" />
+
+        <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="20dp"
+                android:fillViewport="true">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="23dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                    <ImageView
+                            android:layout_width="66dp"
+                            android:layout_height="66dp"
+                            android:background="@drawable/ic_rectangle_33"
+                            android:src="@drawable/lpllgo"
+                            android:tint="@android:color/white" />
+
+                    <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:text="Faint"
+                                android:textColor="@android:color/white"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:text="Linkin Park"
+                                android:textColor="@android:color/holo_red_dark"
+                                android:textSize="13dp"
+                                android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                    <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="14dp"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/ic_path_3" />
+
+                    <ImageView
+                            android:layout_width="4dp"
+                            android:layout_height="17dp"
+                            android:layout_marginEnd="22dp"
+                            android:src="@drawable/ic_group_48" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="23dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                    <ImageView
+                            android:layout_width="66dp"
+                            android:layout_height="66dp"
+                            android:background="@drawable/ic_rectangle_33"
+                            android:src="@drawable/lpllgo"
+                            android:tint="@android:color/white" />
+
+                    <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:text="In the end"
+                                android:textColor="@android:color/white"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:text="Linkin Park"
+                                android:textColor="@android:color/holo_red_dark"
+                                android:textSize="13dp"
+                                android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                    <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="14dp"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/ic_path_3" />
+
+                    <ImageView
+                            android:layout_width="4dp"
+                            android:layout_height="17dp"
+                            android:layout_marginEnd="22dp"
+                            android:src="@drawable/ic_group_48" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="23dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                    <ImageView
+                            android:layout_width="66dp"
+                            android:layout_height="66dp"
+                            android:background="@drawable/ic_rectangle_33"
+                            android:src="@drawable/lpllgo"
+                            android:tint="@android:color/white" />
+
+                    <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:text="Numb"
+                                android:textColor="@android:color/white"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:text="Linkin Park"
+                                android:textColor="@android:color/holo_red_dark"
+                                android:textSize="13dp"
+                                android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                    <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="14dp"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/ic_path_3" />
+
+                    <ImageView
+                            android:layout_width="4dp"
+                            android:layout_height="17dp"
+                            android:layout_marginEnd="22dp"
+                            android:src="@drawable/ic_group_48" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </LinearLayout>
+
+</egolabsapps.basicodemine.videolayout.VideoLayout>

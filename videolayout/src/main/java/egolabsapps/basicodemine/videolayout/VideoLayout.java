@@ -7,14 +7,13 @@ import android.graphics.Matrix;
 import android.graphics.SurfaceTexture;
 import android.media.MediaMetadataRetriever;
 import android.media.MediaPlayer;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
 import android.util.AttributeSet;
 import android.view.Surface;
 import android.view.TextureView;
 import android.widget.FrameLayout;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -30,6 +29,7 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
     private MediaPlayer mMediaPlayer;
     private boolean isUrl;
     private boolean IS_LOOP;
+    private boolean SOUND;
 
     public static enum VGravity {
         start,
@@ -64,6 +64,7 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
             FILE_NAME = a.getString(R.styleable.VideoLayout_path_or_url);
             VIDEO_GRAVITY = a.getInteger(R.styleable.VideoLayout_video_gravity, 2);
             IS_LOOP = a.getBoolean(R.styleable.VideoLayout_loop, true);
+            SOUND = a.getBoolean(R.styleable.VideoLayout_sound, false);
         } finally {
             a.recycle();
         }
@@ -72,14 +73,6 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
         initViews();
         addView(videoSurface);
         setListeners();
-
-        /*
-         *  <enum name="left" value="0"/>
-         *  <enum name="right" value="1"/>
-         *  <enum name="centerCrop" value="2"/>
-         *  <enum name="none" value="3"/>
-         *
-         * */
 
         if (VIDEO_GRAVITY != 3) {
             calculateVideoSize();
@@ -160,7 +153,11 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
                 AssetFileDescriptor afd = getContext().getAssets().openFd(FILE_NAME);
                 mMediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
             }
-            mMediaPlayer.setVolume(0f, 0f);
+
+            if (!SOUND)
+                mMediaPlayer.setVolume(0f, 0f);
+
+
             mMediaPlayer.setSurface(surface);
             mMediaPlayer.setLooping(IS_LOOP);
             mMediaPlayer.prepareAsync();
@@ -170,8 +167,6 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
 
         }
     }
-
-    //todo video değiştirme kısmının kontrol ve testlerini yap
 
     private void changeVideo() {
         try {
@@ -183,7 +178,10 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
                 AssetFileDescriptor afd = getContext().getAssets().openFd(FILE_NAME);
                 mMediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
             }
-            mMediaPlayer.setVolume(0f, 0f);
+
+            if (!SOUND)
+                mMediaPlayer.setVolume(0f, 0f);
+
             mMediaPlayer.setLooping(IS_LOOP);
             mMediaPlayer.setSurface(new Surface(videoSurface.getSurfaceTexture()));
             mMediaPlayer.prepareAsync();
@@ -279,5 +277,4 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
     public void setGravity(VGravity gravity) {
         VIDEO_GRAVITY = gravity.getValue();
     }
-
 }
