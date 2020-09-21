@@ -1,10 +1,11 @@
-# VideoLayout
+# VideoLayout :chicken:
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ea90e5f54edc468eb5e6246f9fc806ed)](https://app.codacy.com/app/AsynctaskCoffee/VideoLayout?utm_source=github.com&utm_medium=referral&utm_content=AsynctaskCoffee/VideoLayout&utm_campaign=Badge_Grade_Dashboard) [![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0) ![version](https://img.shields.io/badge/version-1.1-blue) [![Gitter](https://badges.gitter.im/VideoLayout/community.svg)](https://gitter.im/VideoLayout/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ![Preview](/previews/git.gif)
 
 > More stylish background designs
+
 > Performance friendly and scalable
 
 ## Why this project exists
@@ -86,7 +87,7 @@ The normal videoview on Android is very costly in terms of performance. Also, du
 ## License
 
 ```
-   Copyright 2019 Egemen ÖZOGUL
+   Copyright 2020 Egemen ÖZOGUL
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
