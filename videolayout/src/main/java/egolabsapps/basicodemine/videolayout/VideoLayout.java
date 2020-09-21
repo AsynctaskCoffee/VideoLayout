@@ -56,6 +56,20 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
         super(context);
     }
 
+    public void setSound(boolean sound) {
+        this.SOUND = sound;
+        if (mMediaPlayer != null)
+            try {
+                if (!sound) {
+                    mMediaPlayer.setVolume(0f, 0f);
+                } else {
+                    mMediaPlayer.setVolume(.5f, .5f);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+    }
+
     public VideoLayout(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 

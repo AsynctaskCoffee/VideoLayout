@@ -2,6 +2,8 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ea90e5f54edc468eb5e6246f9fc806ed)](https://app.codacy.com/app/AsynctaskCoffee/VideoLayout?utm_source=github.com&utm_medium=referral&utm_content=AsynctaskCoffee/VideoLayout&utm_campaign=Badge_Grade_Dashboard) [![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0) ![version](https://img.shields.io/badge/version-1.1-blue) [![Gitter](https://badges.gitter.im/VideoLayout/community.svg)](https://gitter.im/VideoLayout/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
+![Preview](/previews/git.gif)
+
 > More stylish background designs
 > Performance friendly and scalable
 
@@ -17,6 +19,7 @@ The normal videoview on Android is very costly in terms of performance. Also, du
         videoLayout = VideoLayout(this)
         videoLayout.setGravity(VideoLayout.VGravity.centerCrop)
         videoLayout.setIsLoop(true)
+        videoLayout.setSound(true)
         videoLayout.setPathOrUrl("loginvideotype3.mp4") // could be any video url
         frameLayout.addView(videoLayout)
 ```
@@ -27,6 +30,7 @@ The normal videoview on Android is very costly in terms of performance. Also, du
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
+            app:sound = "true"
             app:video_gravity="centerCrop"
             app:path_or_url="loginvideotype3.mp4"
             app:loop="true"/>
@@ -59,7 +63,7 @@ The normal videoview on Android is very costly in terms of performance. Also, du
 ### Updates
 
 > 14.07.2020 - AndroidX migration und code refactor
-
+> 21.09.2020 - Sound support and new preview design implementation added
 
 ## License
 
