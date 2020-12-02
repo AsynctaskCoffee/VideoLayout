@@ -7,6 +7,7 @@ import android.graphics.Matrix;
 import android.graphics.SurfaceTexture;
 import android.media.MediaMetadataRetriever;
 import android.media.MediaPlayer;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.Surface;
 import android.view.TextureView;
@@ -82,6 +83,10 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
             SOUND = a.getBoolean(R.styleable.VideoLayout_sound, false);
         } finally {
             a.recycle();
+        }
+
+        if (TextUtils.isEmpty(FILE_NAME)) {
+            return;
         }
 
         isUrl = FILE_NAME.contains("http://") || FILE_NAME.contains("https://");
