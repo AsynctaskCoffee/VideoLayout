@@ -1,6 +1,6 @@
 # VideoLayout :chicken:
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ea90e5f54edc468eb5e6246f9fc806ed)](https://app.codacy.com/app/AsynctaskCoffee/VideoLayout?utm_source=github.com&utm_medium=referral&utm_content=AsynctaskCoffee/VideoLayout&utm_campaign=Badge_Grade_Dashboard) [![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0) ![version](https://img.shields.io/badge/version-1.2-blue) [![Gitter](https://badges.gitter.im/VideoLayout/community.svg)](https://gitter.im/VideoLayout/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ea90e5f54edc468eb5e6246f9fc806ed)](https://app.codacy.com/app/AsynctaskCoffee/VideoLayout?utm_source=github.com&utm_medium=referral&utm_content=AsynctaskCoffee/VideoLayout&utm_campaign=Badge_Grade_Dashboard) [![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0) ![version](https://img.shields.io/badge/version-1.3-blue) [![Gitter](https://badges.gitter.im/VideoLayout/community.svg)](https://gitter.im/VideoLayout/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ![Preview](/previews/git.gif)
 
@@ -57,7 +57,7 @@ The normal videoview on Android is very costly in terms of performance. Also, du
 
 ```groovy
     dependencies {
-	    implementation 'com.github.AsynctaskCoffee:VideoLayout:1.2'
+	    implementation 'com.github.AsynctaskCoffee:VideoLayout:1.3'
 	}
 ```
 
@@ -80,7 +80,7 @@ The normal videoview on Android is very costly in terms of performance. Also, du
     <dependency>
         <groupId>com.github.AsynctaskCoffee</groupId>
         <artifactId>VideoLayout</artifactId>
-        <version>1.2</version>
+        <version>1.3</version>
     </dependency>
 ```
 
@@ -89,6 +89,8 @@ The normal videoview on Android is very costly in terms of performance. Also, du
 > 14.07.2020 - AndroidX migration und code refactor
 
 > 21.09.2020 - Sound support and new preview design implementation added
+
+> 02.12.2020 - Fix
 
 ## License
 
