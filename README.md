@@ -1,6 +1,12 @@
-# VideoLayout :chicken:
+# VideoLayout :chicken: 
+
+
+
+| [:cn: 中文](https://github.com/AsynctaskCoffee/VideoLayout/blob/master/README.cn.md) | [:kr: 한국어](https://github.com/AsynctaskCoffee/VideoLayout/blob/master/README.kr.md) | [:gb: English](https://github.com/AsynctaskCoffee/VideoLayout/blob/master/README.md) | [:tr: Türkçe](https://github.com/AsynctaskCoffee/VideoLayout/blob/master/README.tr.md) |
+|-------------------------------------------------------------------------------------:|----------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ea90e5f54edc468eb5e6246f9fc806ed)](https://app.codacy.com/app/AsynctaskCoffee/VideoLayout?utm_source=github.com&utm_medium=referral&utm_content=AsynctaskCoffee/VideoLayout&utm_campaign=Badge_Grade_Dashboard) [![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0) ![version](https://img.shields.io/badge/version-1.3-blue) [![Gitter](https://badges.gitter.im/VideoLayout/community.svg)](https://gitter.im/VideoLayout/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 
 ![Preview](/previews/git.gif)
 
