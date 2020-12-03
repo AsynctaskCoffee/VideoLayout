@@ -43,6 +43,25 @@ The normal videoview on Android is very costly in terms of performance. Also, du
             app:loop="true"/>
 ```
 
+###### Recommended :collision:
+
+```kotlin    
+    override fun onDestroy() {
+        super.onDestroy()
+        videoLayout.onDestroyVideoLayout()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        videoLayout.onPauseVideoLayout()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        videoLayout.onResumeVideoLayout()
+    }
+```
+
 ###### You should put your mp4 files into assets folder, If you use URL you should declare
 
 ```xml
