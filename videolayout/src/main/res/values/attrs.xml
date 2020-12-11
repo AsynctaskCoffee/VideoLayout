@@ -4,6 +4,7 @@
         <attr name="path_or_url" format="string" />
         <attr name="loop" format="boolean" />
         <attr name="sound" format="boolean" />
+        <attr name="adjustViewBounds" format="boolean" />
         <attr name="video_gravity" format="enum">
             <enum name="start" value="0" />
             <enum name="end" value="1" />

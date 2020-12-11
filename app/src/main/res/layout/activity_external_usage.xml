@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ExternalUsageActivity">
+
+
+    <egolabsapps.basicodemine.videolayout.VideoLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/videoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:adjustViewBounds="false"
+            app:loop="true"
+            app:path_or_url="lp_chesterr.mp4"
+            app:video_gravity="centerInside"
+            tools:context=".MainActivity" />
+
+</LinearLayout>

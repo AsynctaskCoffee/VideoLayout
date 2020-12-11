@@ -31,6 +31,7 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
     private boolean isUrl;
     private boolean IS_LOOP;
     private boolean SOUND;
+    private boolean ADJUSTVIEWBOUNDS = false;
 
 
     // <enum name="start" value="0" />
@@ -82,6 +83,10 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
             }
     }
 
+    public void setAdjustViewBounds(boolean b) {
+        this.ADJUSTVIEWBOUNDS = b;
+    }
+
     public VideoLayout(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 
@@ -91,6 +96,7 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
             VIDEO_GRAVITY = a.getInteger(R.styleable.VideoLayout_video_gravity, 2);
             IS_LOOP = a.getBoolean(R.styleable.VideoLayout_loop, true);
             SOUND = a.getBoolean(R.styleable.VideoLayout_sound, false);
+            ADJUSTVIEWBOUNDS = a.getBoolean(R.styleable.VideoLayout_adjustViewBounds, false);
         } finally {
             a.recycle();
         }
@@ -178,7 +184,19 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
     private void surfaceSetup() {
         int screenHeight = getResources().getDisplayMetrics().heightPixels;
         int screenWidth = getResources().getDisplayMetrics().widthPixels;
-        updateTextureViewSize(screenWidth, screenHeight);
+
+        if (ADJUSTVIEWBOUNDS) {
+
+            if (mVideoHeight < screenHeight && mVideoWidth < screenWidth) {
+                updateTextureViewSize((int) mVideoWidth, (int) mVideoHeight);
+            } else {
+                float height = (screenWidth / mVideoWidth) * mVideoHeight;
+                updateTextureViewSize(screenWidth, (int) height);
+            }
+
+        } else updateTextureViewSize(screenWidth, screenHeight);
+
+
     }
 
     private void surfaceAvailableWorkers(SurfaceTexture surfaceTexture) {
