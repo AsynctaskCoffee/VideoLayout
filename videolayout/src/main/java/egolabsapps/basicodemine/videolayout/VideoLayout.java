@@ -32,23 +32,33 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
     private boolean IS_LOOP;
     private boolean SOUND;
 
+
+    // <enum name="start" value="0" />
+    // <enum name="end" value="1" />
+    // <enum name="centerCrop" value="2" />
+    // <enum name="fitXY" value="3" />
+    // <enum name="centerInside" value="3" />
+
     public static enum VGravity {
         start,
         end,
         centerCrop,
-        none;
+        fitXY,
+        centerInside;
 
         public int getValue() {
             switch (this) {
                 case end:
                     return 1;
-                case none:
-                    return 3;
                 case start:
                     return 0;
                 case centerCrop:
-                default:
                     return 2;
+                case centerInside:
+                    return 4;
+                case fitXY:
+                default:
+                    return 3;
             }
         }
     }
@@ -133,23 +143,43 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
         float scaleX = 1.0f;
         float scaleY = 1.0f;
 
-        if (mVideoWidth > viewWidth && mVideoHeight > viewHeight) {
-            scaleX = mVideoWidth / viewWidth;
-            scaleY = mVideoHeight / viewHeight;
-        } else if (mVideoWidth < viewWidth && mVideoHeight < viewHeight) {
-            scaleY = viewWidth / mVideoWidth;
-            scaleX = viewHeight / mVideoHeight;
-        } else if (viewWidth > mVideoWidth) {
-            scaleY = (viewWidth / mVideoWidth) / (viewHeight / mVideoHeight);
-        } else if (viewHeight > mVideoHeight) {
-            scaleX = (viewHeight / mVideoHeight) / (viewWidth / mVideoWidth);
-        }
-
         int pivotPointX = (VIDEO_GRAVITY == 0) ? 0 : (VIDEO_GRAVITY == 1) ? viewWidth : viewWidth / 2;
         int pivotPointY = viewHeight / 2;
 
         Matrix matrix = new Matrix();
-        matrix.setScale(scaleX, scaleY, pivotPointX, pivotPointY);
+
+        if (VIDEO_GRAVITY == 4) {
+            pivotPointX = 0;
+            pivotPointY = viewHeight / 2;
+
+            if (mVideoWidth > viewWidth && mVideoHeight > viewHeight) {
+                scaleX = mVideoWidth / viewWidth;
+                scaleY = mVideoHeight / viewHeight;
+            } else if (mVideoWidth < viewWidth && mVideoHeight < viewHeight) {
+                scaleY = viewWidth / mVideoWidth;
+                scaleX = viewHeight / mVideoHeight;
+            }
+
+            scaleY = scaleY / 2;
+            scaleX = scaleX / 2;
+
+            matrix.setScale(scaleX, scaleY, pivotPointX, pivotPointY);
+        } else {
+            if (mVideoWidth > viewWidth && mVideoHeight > viewHeight) {
+                scaleX = mVideoWidth / viewWidth;
+                scaleY = mVideoHeight / viewHeight;
+            } else if (mVideoWidth < viewWidth && mVideoHeight < viewHeight) {
+                scaleY = viewWidth / mVideoWidth;
+                scaleX = viewHeight / mVideoHeight;
+            } else if (viewWidth > mVideoWidth) {
+                scaleY = (viewWidth / mVideoWidth) / (viewHeight / mVideoHeight);
+            } else if (viewHeight > mVideoHeight) {
+                scaleX = (viewHeight / mVideoHeight) / (viewWidth / mVideoWidth);
+            }
+
+            matrix.setScale(scaleX, scaleY, pivotPointX, pivotPointY);
+        }
+
 
         videoSurface.setTransform(matrix);
         videoSurface.setLayoutParams(new FrameLayout.LayoutParams(viewWidth, viewHeight));

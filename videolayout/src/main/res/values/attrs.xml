@@ -9,6 +9,7 @@
             <enum name="end" value="1" />
             <enum name="centerCrop" value="2" />
             <enum name="fitXY" value="3" />
+            <enum name="centerInside" value="4" />
         </attr>
     </declare-styleable>
 </resources>
