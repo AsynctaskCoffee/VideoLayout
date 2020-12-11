@@ -1,25 +1,17 @@
-# VideoLayout :chicken: 
-
-
-
-| [:cn: 中文](https://github.com/AsynctaskCoffee/VideoLayout/blob/master/README.cn.md) | [:kr: 한국어](https://github.com/AsynctaskCoffee/VideoLayout/blob/master/README.kr.md) | [:gb: English](https://github.com/AsynctaskCoffee/VideoLayout/blob/master/README.md) | [:tr: Türkçe](https://github.com/AsynctaskCoffee/VideoLayout/blob/master/README.tr.md) |
-|-------------------------------------------------------------------------------------:|----------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+# VideoLayout :chicken:
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ea90e5f54edc468eb5e6246f9fc806ed)](https://app.codacy.com/app/AsynctaskCoffee/VideoLayout?utm_source=github.com&utm_medium=referral&utm_content=AsynctaskCoffee/VideoLayout&utm_campaign=Badge_Grade_Dashboard) [![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0) ![version](https://img.shields.io/badge/version-1.3-blue) [![Gitter](https://badges.gitter.im/VideoLayout/community.svg)](https://gitter.im/VideoLayout/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-
 ![Preview](/previews/git.gif)
 
-> More stylish background designs
+> Şık arka plan tasarımları
 
-> Performance friendly and scalable
+> Performans dostu ve ölçeklenebilir
 
-## Why this project exists
-The normal videoview on Android is very costly in terms of performance. Also, due to the video resolution ratio and apk size, most developers don't want to include videos in the project. With this library, developers will have a performance-friendly video background with a few lines of code.
-
-## Features and Usage
-
-### Easy implementation 
+## Bu proje neden var ?
+Android'deki normal VideoView, performans açısından çok maliyetlidir. Ayrıca, video çözünürlük oranı ve apk boyutu nedeniyle, çoğu geliştirici projeye harici olarak video eklemek istemiyor. Bu kütüphane ile uygulama geliştiriciler, birkaç satır kod içeren performans dostu bir video arka planına sahip olacaklar.
+## Özellikler ve Kullanım
+### Uygulamalarınıza kolaylıkla ekleyebilirsiniz
 
 ```java
         frameLayout = findViewById(R.id.frameLayout)
@@ -43,34 +35,15 @@ The normal videoview on Android is very costly in terms of performance. Also, du
             app:loop="true"/>
 ```
 
-###### Recommended :collision:
-
-```kotlin    
-    override fun onDestroy() {
-        super.onDestroy()
-        videoLayout.onDestroyVideoLayout()
-    }
-
-    override fun onPause() {
-        super.onPause()
-        videoLayout.onPauseVideoLayout()
-    }
-
-    override fun onResume() {
-        super.onResume()
-        videoLayout.onResumeVideoLayout()
-    }
-```
-
-###### You should put your mp4 files into assets folder, If you use URL you should declare
+###### Mp4 dosyalarınızı assets klasörüne koymalısınız, URL kullanıyorsanız manifest içerisinde INTERNET iznini tanımlamayı unutmayın.
 
 ```xml
    <uses-permission android:name="android.permission.INTERNET"/>
 ```
 
-## Implementation Gradle
+## Gradle tanımlanması
 
-###### Add it in your root build.gradle at the end of repositories
+###### root->gradle->repository katmanına eklemeniz gerekenler
 
 ```groovy
     repositories {
@@ -78,7 +51,7 @@ The normal videoview on Android is very costly in terms of performance. Also, du
     }
 ```
 
-###### Add the dependency
+###### app->gradle->dependencies katmanına eklemeniz gerekenler
 
 ```groovy
     dependencies {
@@ -86,9 +59,9 @@ The normal videoview on Android is very costly in terms of performance. Also, du
 	}
 ```
 
-## Implementation Maven
+## Maven tanımlanması
 
-###### Add the JitPack repository to your build file 
+###### JitPack repository tanımlamasını build dosyanıza ekleyin 
 
 ```groovy
     <repositories>
@@ -99,7 +72,7 @@ The normal videoview on Android is very costly in terms of performance. Also, du
     </repositories>
 ```
 
-###### Add the dependency
+###### VideoLayout dependency kimliklerini tanımlayın
 
 ```groovy
     <dependency>
@@ -109,15 +82,15 @@ The normal videoview on Android is very costly in terms of performance. Also, du
     </dependency>
 ```
 
-### Updates
+### Güncellemeler
 
-> 14.07.2020 - AndroidX migration und code refactor
+> 14.07.2020 - AndroidX'e geçiş ve kodsal düzenlemeler
 
-> 21.09.2020 - Sound support and new preview design implementation added
+> 21.09.2020 - Ses desteği ve demo uygulamasının görsel değişiklikleri
 
 > 02.12.2020 - Fix
 
-## License
+## Lisans
 
 ```
    Copyright 2020 Egemen ÖZOGUL

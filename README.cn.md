@@ -1,25 +1,19 @@
-# VideoLayout :chicken: 
-
-
-
-| [:cn: 中文](https://github.com/AsynctaskCoffee/VideoLayout/blob/master/README.cn.md) | [:kr: 한국어](https://github.com/AsynctaskCoffee/VideoLayout/blob/master/README.kr.md) | [:gb: English](https://github.com/AsynctaskCoffee/VideoLayout/blob/master/README.md) | [:tr: Türkçe](https://github.com/AsynctaskCoffee/VideoLayout/blob/master/README.tr.md) |
-|-------------------------------------------------------------------------------------:|----------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+# VideoLayout :chicken:
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ea90e5f54edc468eb5e6246f9fc806ed)](https://app.codacy.com/app/AsynctaskCoffee/VideoLayout?utm_source=github.com&utm_medium=referral&utm_content=AsynctaskCoffee/VideoLayout&utm_campaign=Badge_Grade_Dashboard) [![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0) ![version](https://img.shields.io/badge/version-1.3-blue) [![Gitter](https://badges.gitter.im/VideoLayout/community.svg)](https://gitter.im/VideoLayout/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-
 ![Preview](/previews/git.gif)
 
-> More stylish background designs
+> 更时尚的背景设计
 
-> Performance friendly and scalable
+> 性能友好且可扩展
 
-## Why this project exists
-The normal videoview on Android is very costly in terms of performance. Also, due to the video resolution ratio and apk size, most developers don't want to include videos in the project. With this library, developers will have a performance-friendly video background with a few lines of code.
+## 为什么这个项目存在
+就性能而言，Android上的普通-videoview-成本很高。 另外，由于视频分辨率和apk大小，大多数开发人员都不希望在项目中包含视频。 有了这个库，开发人员将拥有几行代码的性能友好的视频背景。
 
-## Features and Usage
+## 功能与用法
 
-### Easy implementation 
+### 易于实施 
 
 ```java
         frameLayout = findViewById(R.id.frameLayout)
@@ -27,7 +21,7 @@ The normal videoview on Android is very costly in terms of performance. Also, du
         videoLayout.setGravity(VideoLayout.VGravity.centerCrop)
         videoLayout.setIsLoop(true)
         videoLayout.setSound(true)
-        videoLayout.setPathOrUrl("loginvideotype3.mp4") // could be any video url
+        videoLayout.setPathOrUrl("loginvideotype3.mp4") // 可以是任何视频网址
         frameLayout.addView(videoLayout)
 ```
 
@@ -43,34 +37,15 @@ The normal videoview on Android is very costly in terms of performance. Also, du
             app:loop="true"/>
 ```
 
-###### Recommended :collision:
-
-```kotlin    
-    override fun onDestroy() {
-        super.onDestroy()
-        videoLayout.onDestroyVideoLayout()
-    }
-
-    override fun onPause() {
-        super.onPause()
-        videoLayout.onPauseVideoLayout()
-    }
-
-    override fun onResume() {
-        super.onResume()
-        videoLayout.onResumeVideoLayout()
-    }
-```
-
-###### You should put your mp4 files into assets folder, If you use URL you should declare
+###### 您应该将mp4文件放入资产文件夹，如果使用URL，则应在AndroidManifest中声明互联网权限
 
 ```xml
    <uses-permission android:name="android.permission.INTERNET"/>
 ```
 
-## Implementation Gradle
+## 图书馆实施
 
-###### Add it in your root build.gradle at the end of repositories
+###### 将其添加到存储库末尾的root build.gradle中
 
 ```groovy
     repositories {
@@ -78,7 +53,7 @@ The normal videoview on Android is very costly in terms of performance. Also, du
     }
 ```
 
-###### Add the dependency
+###### 添加依赖项
 
 ```groovy
     dependencies {
@@ -86,9 +61,9 @@ The normal videoview on Android is very costly in terms of performance. Also, du
 	}
 ```
 
-## Implementation Maven
+## 实施Maven
 
-###### Add the JitPack repository to your build file 
+###### 将JitPack存储库添加到您的构建文件中
 
 ```groovy
     <repositories>
@@ -99,7 +74,7 @@ The normal videoview on Android is very costly in terms of performance. Also, du
     </repositories>
 ```
 
-###### Add the dependency
+###### 添加依赖项
 
 ```groovy
     <dependency>
@@ -109,15 +84,15 @@ The normal videoview on Android is very costly in terms of performance. Also, du
     </dependency>
 ```
 
-### Updates
+### 更新
 
-> 14.07.2020 - AndroidX migration und code refactor
+> 14.07.2020 - AndroidX迁移和代码重构
 
-> 21.09.2020 - Sound support and new preview design implementation added
+> 21.09.2020 - 声音支持和新的预览设计实现已添加
 
-> 02.12.2020 - Fix
+> 02.12.2020 - 修正
 
-## License
+## 执照
 
 ```
    Copyright 2020 Egemen ÖZOGUL
