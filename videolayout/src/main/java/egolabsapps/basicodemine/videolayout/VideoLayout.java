@@ -109,12 +109,6 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
         initViews();
         addView(videoSurface);
         setListeners();
-
-        if (VIDEO_GRAVITY != 3) {
-            calculateVideoSize();
-            surfaceSetup();
-        }
-
     }
 
 
@@ -218,7 +212,15 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
             mMediaPlayer.setSurface(surface);
             mMediaPlayer.setLooping(IS_LOOP);
             mMediaPlayer.prepareAsync();
-            mMediaPlayer.setOnPreparedListener(MediaPlayer::start);
+            mMediaPlayer.setOnPreparedListener(mp -> {
+                mp.start();
+                mVideoHeight = mp.getVideoHeight();
+                mVideoWidth = mp.getVideoWidth();
+                if (VIDEO_GRAVITY != 3) {
+                    surfaceSetup();
+                }
+            });
+
 
         } catch (IllegalArgumentException | SecurityException | IllegalStateException | IOException ignored) {
 
@@ -315,11 +317,6 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
             initViews();
             addView(videoSurface);
             setListeners();
-        }
-
-        if (VIDEO_GRAVITY != 3) {
-            calculateVideoSize();
-            surfaceSetup();
         }
 
         if (videoSurface != null) {
