@@ -151,18 +151,7 @@ public class VideoLayout extends FrameLayout implements TextureView.SurfaceTextu
         if (VIDEO_GRAVITY == 4) {
             pivotPointX = 0;
             pivotPointY = viewHeight / 2;
-
-            if (mVideoWidth > viewWidth && mVideoHeight > viewHeight) {
-                scaleX = mVideoWidth / viewWidth;
-                scaleY = mVideoHeight / viewHeight;
-            } else if (mVideoWidth < viewWidth && mVideoHeight < viewHeight) {
-                scaleY = viewWidth / mVideoWidth;
-                scaleX = viewHeight / mVideoHeight;
-            }
-
-            scaleY = scaleY / 2;
-            scaleX = scaleX / 2;
-
+            scaleY = (viewWidth / mVideoWidth) / (viewHeight / mVideoHeight);
             matrix.setScale(scaleX, scaleY, pivotPointX, pivotPointY);
         } else {
             if (mVideoWidth > viewWidth && mVideoHeight > viewHeight) {
